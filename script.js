@@ -1,7 +1,4 @@
-let income = document.getElementById('income').innerText;
-let food = document.getElementById('food').innerText;
-let rent = document.getElementById('rent').innerText;
-let clothes = document.getElementById('clothes').innerText;
+
 
 let calculate = document.getElementById('calculate').addEventListener('click',function(){
 
@@ -9,6 +6,27 @@ let income = document.getElementById('income').value;
 let food = document.getElementById('food').value;
 let rent = document.getElementById('rent').value;
 let clothes = document.getElementById('clothes').value;
+
+if(food == '')
+{
+  food = 0;
+  document.getElementById('food').value = 0;
+}
+if(rent == '')
+{
+  rent= 0;
+  document.getElementById('rent').value=0;
+}
+if(clothes == '')
+{
+  clothes= 0;
+  document.getElementById('clothes').value = 0;
+}
+if(income == '')
+{
+  income = 0;
+  document.getElementById('income').value=0;
+}
 
 calculateBalance(income , food, rent , clothes);
 
@@ -60,6 +78,7 @@ function calculateSavings(saveInput)
     
 }
 
+//calculate total expenses and balance
 
   function calculateBalance(income, food, rent , clothes)
     {
@@ -75,7 +94,9 @@ function calculateSavings(saveInput)
             document.getElementById('error-1').style.display = 'block';
             
         }
-        else{
+         else{
+            
+
             document.getElementById('error-1').style.display = 'none';
 
             cost = parseFloat(food) + parseFloat(rent) + parseFloat(clothes);
