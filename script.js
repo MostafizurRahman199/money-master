@@ -43,6 +43,7 @@ calculateBalance(income , food, rent , clothes);
    {
      saveInput = 0;
      document.getElementById('save-input').value = 0;
+    
    }
    calculateSavings(saveInput);
 });
@@ -64,7 +65,7 @@ function calculateSavings(saveInput)
     {
         document.getElementById('error-3').style.display = 'block';
     }
- 
+   
     else
     {
        
@@ -79,6 +80,12 @@ function calculateSavings(saveInput)
             document.getElementById('error-4').style.display = 'block';
 
         }
+        else if(isNaN(savingAmount)|| isNaN(remainingAmount))
+        {
+          document.getElementById('saving-amount').innerText = 00;
+             document.getElementById('remaining-balance').innerText = 00;
+        }
+        
         else
         {
              document.getElementById('error-4').style.display = 'none';
@@ -105,8 +112,12 @@ function calculateSavings(saveInput)
         {
             
             document.getElementById('error-1').style.display = 'block';
+            document.getElementById('error-2').style.display = 'none';
+            document.getElementById('error-3').style.display = 'none';
+            document.getElementById('error-4').style.display = 'none';
             
         }
+       
          else{
             
 
@@ -119,6 +130,7 @@ function calculateSavings(saveInput)
             {
                 document.getElementById('error-2').style.display = 'block';
             }
+            
             else{
                 document.getElementById('error-2').style.display = 'none';
                 TotalExpenses.innerText = cost;
