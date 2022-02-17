@@ -1,4 +1,5 @@
 
+// catching essential element
 
 let calculate = document.getElementById('calculate').addEventListener('click',function(){
 
@@ -6,6 +7,9 @@ let income = document.getElementById('income').value;
 let food = document.getElementById('food').value;
 let rent = document.getElementById('rent').value;
 let clothes = document.getElementById('clothes').value;
+
+
+//check is any input field is empty
 
 if(food == '')
 {
@@ -28,14 +32,22 @@ if(income == '')
   document.getElementById('income').value=0;
 }
 
+//calling  balance calculate function
 calculateBalance(income , food, rent , clothes);
 
 })
 
  document.getElementById('save-button').addEventListener('click',function(){
    let saveInput = document.getElementById('save-input').value;
+    if(saveInput == '')
+   {
+     saveInput = 0;
+     document.getElementById('save-input').value = 0;
+   }
    calculateSavings(saveInput);
 });
+
+
 
 //calculate savings
 
@@ -52,6 +64,7 @@ function calculateSavings(saveInput)
     {
         document.getElementById('error-3').style.display = 'block';
     }
+ 
     else
     {
        
