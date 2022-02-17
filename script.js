@@ -23,17 +23,22 @@ calculateBalance(income , food, rent , clothes);
 
 function calculateSavings(saveInput)
 {
+    document.getElementById('error-3').style.display = 'none';
+    const income = parseFloat(document.getElementById('income').value);
+    const balance = parseFloat(document.getElementById('balance').innerText);
+    let savingAmount=0;
+    let remainingAmount = 0;
+
+
     if(isNaN(saveInput))
     {
         document.getElementById('error-3').style.display = 'block';
     }
     else
     {
-        document.getElementById('error-3').style.display = 'none';
-        const income = parseFloat(document.getElementById('income').value);
-        const balance = parseFloat(document.getElementById('balance').innerText);
-        let savingAmount = (parseFloat(saveInput) * income) / 100;
-        let remainingAmount = balance -savingAmount;
+       
+         savingAmount = (parseFloat(saveInput) * income) / 100;
+         remainingAmount = balance -savingAmount;
 
         console.log(savingAmount);
         console.log(remainingAmount);
@@ -45,7 +50,9 @@ function calculateSavings(saveInput)
         }
         else
         {
-            
+             document.getElementById('error-4').style.display = 'none';
+             document.getElementById('saving-amount').innerText = savingAmount;
+             document.getElementById('remaining-balance').innerText = remainingAmount;
         }
 
     
