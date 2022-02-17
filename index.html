@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="p-8" id="main">
+        <h1 class="text-3xl text-center">Manage Money</h1>
+        <div class="grid grid-cols-2 gap-4 ">
+            <div>
+              <img class="h-2/4" src="screen-0.jpg" alt="">
+            </div>
+           
+            <div id="input-div">
+              <h1 class="text-2xl">Income</h1>
+              <p>Income :
+            <input  class="border " type="text" name="income" id="income"></p>
+            <h1 class="text-2xl">Expenses</h1>
+            <p>Food : <input type="text" name="" id="food"></p><br>
+            <P>Rent : <input type="text" name="" id="rent"></P><br>
+            <p>Clothes : <input type="text" name="" id="clothes"></p><br>
+            <button id="calculate">Calculate</button><br>
+            <h1 class="text-2xl">Total Exoenses : <span id="total-expenses">5500</span></h1>
+            <h1 class="text-2xl">Balance : <span id="balance">4500</span></h1>
+
+            </div>
+
+        </div>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
